@@ -428,6 +428,11 @@ With the NAS **unplugged from mains**, solder a 4-pin header into the holes and 
 Note that TX connects to RX and vice versa — one device's "talk" wire is the other's "listen"
 wire.
 
+![A USB-to-TTL serial adapter connected to the LinkStation board with three jumper wires](pics/serial-connection.jpeg)
+
+*The finished connection: three jumper wires (GND, RX, TX) run from the USB-to-TTL adapter on
+the left to the serial header on the LinkStation board. The adapter's VCC pin is left empty.*
+
 ### Open the connection
 
 On your Linux machine:
@@ -1037,6 +1042,11 @@ ext2ls ide 0:1
 
 If this lists your two `.buffalo` files, U-Boot can read them and the problem is elsewhere. If
 it errors, your `/boot` filesystem is not readable — go back to Chapter 8.
+
+![U-Boot's Marvell>> prompt listing the /boot partition, including uImage.buffalo and initrd.buffalo](pics/marvell-console.png)
+
+*A healthy result: `ext2ls ide 0:1` at the `Marvell>>` prompt shows `uImage.buffalo` and
+`initrd.buffalo` on the boot partition.*
 
 ### It boots but never appears on the network
 
